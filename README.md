@@ -11,27 +11,19 @@
 Download the latest version of configuration file `fail2ban.conf` from the [repo](https://github.com/hermanekt/zabbix-fail2ban-discovery-).
 Put the file here `/etc/zabbix/zabbix_agentd.d/fail2ban.conf` or here for zabbix agent 2 `/etc/zabbix/zabbix_agentd2.d/fail2ban.conf`
 
+```sh
+cd /etc/zabbix/zabbix_agentd2.d/
+wget https://raw.githubusercontent.com/MysterAitch/zabbix-fail2ban-discovery-/master/fail2ban.conf
+```
+
 ### 2. Grant access to Fail2Ban
 Fail2ban works only with `root` by default. We need to grant permission to Zabbix to access the Fail2ban by adding this 2 lines to `/etc/sudoers`:
 ```console
 zabbix ALL=NOPASSWD: /usr/bin/fail2ban-client status
 zabbix ALL=NOPASSWD: /usr/bin/fail2ban-client status *
 ```
-Then apply new sudoers and zabbix agent setting
-```console
-/etc/init.d/sudo restart
-/etc/init.d/zabbix-agent restart 
-```
-OR
-```console
-/etc/init.d/sudo restart
-/etc/init.d/zabbix-agend restart
-```
-`If you have systemd, please use this correct command.`
-```console
-systemctl restart zabbix-agent
-```
-OR
+Then apply new sudoers and zabbix agent setting (see parent of fork for list of alternative options)
+
 ```console
 systemctl restart zabbix-agent2
 ```
