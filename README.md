@@ -11,8 +11,13 @@
 Download the latest version of configuration file `fail2ban.conf` from the [repo](https://github.com/hermanekt/zabbix-fail2ban-discovery-).
 Put the file here `/etc/zabbix/zabbix_agentd.d/fail2ban.conf` or here for zabbix agent 2 `/etc/zabbix/zabbix_agentd2.d/fail2ban.conf`
 
-```sh
-wget https://raw.githubusercontent.com/MysterAitch/zabbix-fail2ban-discovery-/master/fail2ban.conf -P /etc/zabbix/zabbix_agent2.d/
+Zabbix Agent
+```console
+wget https://raw.githubusercontent.com/MysterAitch/zabbix-fail2ban-discovery-/master/fail2ban.conf -O /etc/zabbix/zabbix_agentd.d/fail2ban.conf
+```
+Zabbix Agent 2
+```console
+wget https://raw.githubusercontent.com/MysterAitch/zabbix-fail2ban-discovery-/master/fail2ban.conf -O /etc/zabbix/zabbix_agent2.d/fail2ban.conf
 ```
 
 ### 2. Grant access to Fail2Ban
